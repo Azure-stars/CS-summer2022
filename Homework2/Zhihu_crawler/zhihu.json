@@ -1,0 +1,18 @@
+{
+  "headers": {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36",
+    "Cookie": "'_zap=6c274198-88b2-4b1d-84d7-130bb9f81f30; d_c0='ANAePKlYWROPTtlQ_h_1By-dOyz0tHnuajU=|1625193445'; _xsrf=Ye2tagN33D2byBAn4v5q1XTU8qHUDuc5; _9755xjdesxxd_=32; YD00517437729195%3AWM_TID=1j3UMv9pdclFBUURAVN%2FygDdHJYtGtML; __snaker__id=uaM2PDWmohi491IR; gdxidpyhxdE=mvKv%5CKViT4i1c2QC5a8uA5CbW72ofir4b2Q%2Fw542HTlf0nchNNe0fsT%2FIPmcPB1GHZAK5bsq%2BbYWrlWbJpS%2FLLH2V6O9uGYjaHK%2FNwnT6PVzc8gQDwdBDjclRfS%2FplhJcB4ZQuZy2ca%2BgJEasN8XOfblu631RtE%2BqDw90gabxbNdG2oq%3A1652358023205; YD00517437729195%3AWM_NIKE=9ca17ae2e6ffcda170e2e6ee85d4449399f8b2fc72f7928aa6c84e868e8b87c15e8fe99bb9e760b4abfa8dc62af0fea7c3b92a95899787f75bedbeaa85e13f8b9a84a5d67db38abf90ec4abcbaff98ee39a89caaa4e84fa9ac8dade761f6bdffd0d77e88b38cd8cd6a83beb6abd045f48dae8dce43ad93fa8cb83eb68700abf03d97eb8d94d36dababfba6c459aa8d8fbab23b8bb4fed5d741b194f7d0e241b091fedaf642b8af9db2bc6fbcb9aa85d83a87a89eb6e237e2a3; YD00517437729195%3AWM_NI=WWYftQ%2Fbfdb5IFLDWwqVqoiBxf1wo3dDfCeEktCLdk6c1%2FTvDmD7NbAbzJMO0SblOIoM6k56vY0Jm7U5CsPgiu5EASjSAY31Il24TKsL9%2FcKlO29wJtqSQ9exgfdU2ExRUc%3D; z_c0=2|1:0|10:1652357147|4:z_c0|92:Mi4xVnJzNkJRQUFBQUFBMEI0OHFWaFpFeVlBQUFCZ0FsVk5HMFpxWXdCYkJkaHkxLWtPWjNuLTJueldnRWJfSmI2RkdR|b7aef893f0a9d9f2ec48492e97fa7f700daa5a8c35ca250d057d48884a14a10d; q_c1=a108ddc5ca4f4e169131377320f44afb|1652357148000|1652357148000; Hm_lvt_98beee57fd2ef70ccdd5ca52b9740c49=1658058879,1658073798,1658136430,1658236352; tst=h; Hm_lpvt_98beee57fd2ef70ccdd5ca52b9740c49=1658242685; NOT_UNREGISTER_WAITING=1; SESSIONID=vV5XsSSjwzBDrhhwr25RTuulpjGgDFCYcO2gvc3QVcx; JOID=U18VBU0DvXAIVIAlNgT87gT_330kc-xDUCDVcVpzwTVKJu9LRnx6oG1VgSQw3J3mxuNRJAfhPf_k4JBRe4xJtWM=; osd=W1kRBEILu3QJW4gjMgXz5gL73nIsdehCXyjTdVt8yTNOJ-BDQHh7r2VThSU_1Jvix-xZIgPgMvfi5JFec4pNtGw=; KLBRSID=dc02df4a8178e8c4dfd0a3c8cbd8c726|1658242692|1658242685"
+  },
+  "config": {
+    "interval_between_board": 600,
+    "interval_between_question": 2
+  },
+  "mysql": {
+    "host": "59.66.131.240",
+    "user": "Azure_stars",
+    "password": "zyj440582",
+    "database": "zhihucrawl",
+    "charset": "utf8mb4",
+    "port": 45407
+  }
+}

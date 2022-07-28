@@ -1,0 +1,7 @@
+ipython
+pillow
+numpy
+requests
+tqdm
+matplotlib
+
