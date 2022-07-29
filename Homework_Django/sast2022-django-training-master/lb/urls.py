@@ -7,5 +7,5 @@ urlpatterns = [
     path('history/<slug:user_name>',views.history),
     path('submit', views.submit),
     path('vote',views.vote)
-    # TODO: Config URL Patterns
+    # 对应接口含义详见README.md
 ]

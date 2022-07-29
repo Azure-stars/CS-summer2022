@@ -75,22 +75,20 @@ def judge(content: str):
     :param content: the submitted content to be judged
     :return: main score, list[sub score]
     """
-
-    # TODO: Use `ground_truth.txt` and the content to calculate scores.
-    #  If `content` is invalid, raise an Exception so that it can be
-    #  captured in the view function.
-    #  You can define the calculation of main score arbitrarily.
     try:
         file_std = open(r'lb/ground_truth.txt','r')
         std_answer = file_std.read().splitlines()
         now_answer = content.splitlines()
+        # 打开文件，并按行分割转化为列表
     except Exception:
         raise Exception('文件打开失败')
     
     if len(std_answer) != len(now_answer):
         raise Exception('输入文件长度不符合规范，未包含所有图片')
+    # 若输入文件与标准答案行数不一致，报错
     if(now_answer[0] != std_answer[0]):
         raise Exception('输入文件列名有误')
+    # 输入文件列名需按照“图片名、山、天空、水”的顺序进行排列
     total_answer = [0,0,0]
     for i in range(1, len(std_answer)):
         std_sub_answer = std_answer[i].split(',')
@@ -105,4 +103,5 @@ def judge(content: str):
     tot_len = len(std_answer) - 1
     for i in range(3):
         total_answer[i] = int(total_answer[i] * 100 / tot_len)
+    # 总分为三个子任务的平均分然后舍去小数部分
     return int(sum(total_answer) / 3), total_answer
