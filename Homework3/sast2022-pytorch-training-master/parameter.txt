@@ -1,0 +1,7 @@
+第一次调试：lr:1e-4  weight_decay:0.02  结果  83.12 
+第二次调试: lr:5e-4  weight_decay:0.02  结果  57
+第三次调试: lr:5e-6  weight_decay:0.02 一轮10次  结果  94.62
+第四次调试: lr:5e-6  weight_decay:0.02  一轮20次 结果  99.64
+第五次调试: lr:1e-5  weight_decay:0.02 一轮20次  结果  0.84（平均）
+第六次调试: lr:5e-6  weight_decay:0.02  一轮20次  结果  0.82
+第七次调试: lr:1e-6  weight_decay:0.02  一轮10次  结果  0.85

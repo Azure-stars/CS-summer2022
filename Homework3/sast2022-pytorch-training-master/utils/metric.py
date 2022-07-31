@@ -5,6 +5,7 @@ from matplotlib import pyplot as plt
 
 def calc_accuracy(pred_label, gt_label):
     """
+    计算该模型与标准答案的差距，从而得到模型的精确程度
     :param pred_label: A list contains of predicted labels in type np.ndarray.
     :param gt_label:  A list contains ground truths.
     :return: A number between 0 and 1 representing the accuracy rate.
@@ -16,13 +17,13 @@ def calc_accuracy(pred_label, gt_label):
 
 def draw_loss_curve(args, loss_list):
     """
+    画出代价与训练次数对应的图像
     :param args: Runtime arguments.
     :param loss_list: A list contains of losses of float number across different batches.
     :return: None, draw and save a curve under `{args.save_path} / {args.task_name} / loss.png`
     """
     os.makedirs(f"{args.save_path}/{args.task_name}", exist_ok=True)
     plt.cla()
-    # TODO Start: Plot curve using values in loss_list #
-    plt.plot([], [])
-    # TODO End #
+    plt.plot(loss_list)
     plt.savefig(f"{args.save_path}/{args.task_name}/loss.png")
+    plt.show()

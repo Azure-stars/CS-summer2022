@@ -8,6 +8,7 @@ from argparse import ArgumentParser
 
 def calc_label(label: np.ndarray, threshold: float):
     """
+    计算label中各像素对应的标签,然后返回该图片的标签分类
     Calc label category statistics.
     For all label_ids in `label` array, calculate the total number of mountains (namely how many label_ids is in [0,7]),
     if this number is greater than threshold * sizeof label, then mark the `mountain` field in return dictionary as
@@ -23,10 +24,17 @@ def calc_label(label: np.ndarray, threshold: float):
         "water": [2, 3, 8, 16, 20],
     }
 
-    # TODO Start: Finish this function #
-    raise NotImplementedError
-    return {"mountain": True, "sky": True, "water": True}
-    # TODO End #
+    answer = {}
+    
+    for key,val in label2id.items():
+        num = 0
+        for val_num in val:
+            num += np.sum(label == val_num)
+        if num > label.size * threshold:
+            answer[key] = True
+        else:
+            answer[key] = False
+    return answer
 
 
 def process_data(mode: str, threshold: float):
@@ -37,13 +45,11 @@ def process_data(mode: str, threshold: float):
     :return: None. Write a file to the corresponding path.
     """
     working_dir = (Path(__file__) / ".." / ".." / "data" / mode).resolve()
-
-    # TODO Start: Append directory in pathlib.Path, so that they point to `./data/{mode}/imgs`
-    #  and `./data/{mode}/labels` #
-    image_dir = None
-    label_dir = None
-    # TODO End #
-
+    # 得到数据集所在目录
+    # path.resolve总是返回一个以相对于当前的工作目录（working directory）的绝对路径。
+    image_dir = working_dir / 'imgs'
+    label_dir = working_dir / 'labels'
+    
     print(f"[Data] Now in {working_dir}...")
 
     out_str = "img_path,mountain,sky,water\n"
@@ -51,28 +57,26 @@ def process_data(mode: str, threshold: float):
     assert os.path.exists(image_dir), "No directory called `imgs` found in working directory!"
     assert os.path.exists(label_dir), "No directory called `labels` found in working " \
                                                                 "directory!"
-
-    # TODO Start: Construct a list of filenames without suffix from image_dir, like ['48432_b67ec6cd63_b',
-    #  '70190_90b25efb3b_b', ...] #
-    filename_list = [None, None, ...]
-    # TODO End #
+    filename_list = []
+    for file in os.listdir(image_dir):
+        filename_list.append(os.path.splitext(file)[0])
+    # 去除文件的后缀名，存储在filename_list中
 
     for idx, file_name in tqdm(enumerate(filename_list), total=len(filename_list)):
         label_path = str(label_dir / f"{file_name}.png")
         label = Image.open(label_path)
         label_array = np.array(label)
-
+        # 读入图片并转化为像素array张量
         statistics = calc_label(label_array, threshold)
         out_str += f"{file_name}.jpg,{statistics['mountain']},{statistics['sky']},{statistics['water']}\n"
 
-        # if idx == 1000:
-        #     break
+        if idx == 5000:
+            break
 
-    # After all file has been processed, write `out_str` to `{working_dir}/file.txt`
-    # TODO Start: Write out_str to `{working_dir}/file.txt` in overwritten mode #
-    raise NotImplementedError
-    # TODO End #
-
+    outfile = open(working_dir/'file.txt', 'w')
+    outfile.write(out_str)
+    # 输出格式与val/file.txt格式相同
+    outfile.close()
 
 if __name__ == "__main__":
     parser = ArgumentParser()
